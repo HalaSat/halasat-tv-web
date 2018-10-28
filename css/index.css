@@ -1,0 +1,110 @@
+
+/* Unset properties */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+/* Header */
+#header {
+    background-color: #eee;
+    height: 60px;
+    padding: 10px 20px;
+}
+/* Logo */
+#logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 60px;
+    /* text-shadow: 2px 3px gainsboro; */
+}
+#logo::before {
+    content: 'HS';
+    background-color: #fab1a0;
+    padding: 3px;
+}
+#logo::after {
+    content: 'TV';
+    background-color: #74b9ff;
+    padding: 3px;
+}
+
+/* Body */
+#body {
+    display: flex;
+    flex-shrink: 1;
+    padding: 20px;
+}
+/* Video player */
+#video-container {
+    flex: 2;
+}
+#video {
+    background: #000;
+    padding-top: 56.25%;
+}
+/* Channels */
+#channels {
+    position: relative;
+    flex: 1;
+    background-color: #f2f2f2;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+#channels #title {
+    margin: 0;
+    line-height: 60px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-weight: 500;
+    color: #4a5a5a;
+    background-color: #e5e2e7;
+}
+
+#channels-list-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    overflow-y: scroll;
+}
+#channels-list {
+    overflow-y: scroll;
+}
+.channel {
+    margin: 20px 20px 0 20px;
+    height: 50px;
+    background-color: #fff;;
+}
+.channel:last-child {
+    margin-bottom: 20px;
+}
+
+
+/* Mobile optimizations */
+@media screen and (max-width: 900px) {
+    #header {
+        padding: 5px 10px;
+    }
+    #logo {
+        font-size: 1.5rem;
+    }
+    #body {
+        flex-direction: column;
+        padding: 10px;
+    }
+    #channels {
+        margin: 20px 0 0 0;
+    }
+    #channels #title {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
