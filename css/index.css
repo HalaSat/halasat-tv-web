@@ -5,8 +5,26 @@ html, body {
     padding: 0;
     font-family: Roboto, sans-serif;
 }
+
 a {
     text-decoration: none;
+}
+
+/* Colors */
+.purple::before {
+    background-color: purple;
+}
+.green::before {
+    background-color: #32cdcd;
+}
+.blue::before {
+    background-color: #1382ba;
+}
+.black::before {
+    background-color: #000;
+}
+.yellow::before {
+    background-color: orange;
 }
 
 /* Header */
@@ -39,6 +57,7 @@ a {
     display: flex;
     flex-shrink: 1;
     padding: 20px;
+    margin-bottom: 100px;
 }
 /* Video player */
 #video-container {
@@ -55,6 +74,7 @@ a {
     background-color: #f2f2f2;
     margin: 0 20px;
     box-sizing: border-box;
+    box-shadow: 1px 1px 4px rgba(100, 100, 100, .2);
 }
 #channels #title {
     margin: 0;
@@ -75,12 +95,84 @@ a {
     overflow-y: scroll;
 }
 .channel {
+    display: flex;
+    align-items: center;
+    position: relative;
     margin: 20px 20px 0 20px;
     height: 50px;
-    background-color: #fff;;
+    background-color: #fff;
 }
 .channel:last-child {
     margin-bottom: 20px;
+}
+.channel::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    animation : .2s 1 forwards skew-in;
+}
+.channel:hover::before {
+    animation: .2s 1 forwards skew-out;
+}
+.channel > img {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.channel > p {
+    margin-left: 10px;
+    color: #5f5f5f;
+    font-size: 1rem;
+}
+/* Footer */
+#footer {
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: gray;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+#footer p{
+    margin: 5px;
+}
+#footer a{
+    font-weight: 700;
+    color: gray;
+}
+
+/* Animations */
+@keyframes skew-out {
+    0% {
+        width: 10px;
+    }
+    10% {
+        border-radius: 0 25px 25px 0;
+    }
+    100% {
+        content: 'Watch';
+        width: 100%;
+        border-radius: 0;
+    }
+}
+@keyframes skew-in {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 10px;
+    }
 }
 
 
@@ -99,8 +191,13 @@ a {
     #channels {
         margin: 20px 0 0 0;
     }
+    #channels-list-container {
+        height: 500px;
+    }
     #channels #title {
         font-size: 1rem;
-        padding: 15px;
+    }
+    #footer {
+        display: none;
     }
 }
