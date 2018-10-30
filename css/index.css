@@ -52,6 +52,9 @@ input:focus {
     line-height: 60px;
     /* text-shadow: 2px 3px gainsboro; */
 }
+#logo::before, #logo::after {
+    opacity: .7;
+}
 #logo::before {
     content: 'HS';
     background-color: #fab1a0;
@@ -65,6 +68,14 @@ input:focus {
 
 #nav a {
     margin: 0 20px;
+    color: #e2e2e2cc;
+    transition: all .3s;
+}
+#nav a:hover {
+    color: #fff;
+}
+#nav a span {
+    font-size: 1rem;
 }
 #nav a i{
     color: #fff;
@@ -73,16 +84,23 @@ input:focus {
     border-radius: 50%;
     transition: all .3s;
     box-shadow: 0 0 3px rgba(100, 100, 100, .1);
+    margin-left: 10px;
 }
-#nav a:first-child i {
+#nav .cinema i {
     padding: 12px 10.5px;
 }
-#nav a:last-child i {
+#nav .share i {
     padding: 12px;
 }
 #nav a:hover i{
     transform: rotate(360deg) scale(1.2);
     box-shadow: 0 0 10px rgba(100, 100, 100, .2);
+}
+#nav .cinema:hover i {
+    background-color: maroon;
+}
+#nav .share:hover i {
+    background-color: orange;
 }
 
 /* Body */
@@ -109,6 +127,7 @@ input:focus {
     box-shadow: 1px 1px 4px rgba(100, 100, 100, .2);
 }
 #channels #title {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,9 +151,20 @@ input:focus {
 }
 #title #channels-search::placeholder {
     color: #f3f2f2;
+    font-weight: 500;
 }
 #title #channels-search:focus {
     flex: 1;
+    box-shadow: 0 0 0 2px #27a3f6cc;
+}
+#title i {
+    position: absolute;
+    right: 40px;
+    color: #4892c380;
+    transition: all .3s;
+}
+#channels-search:focus + i {
+    color: #27a3f6cc;
 }
 #channels-list-container {
     position: absolute;
@@ -199,8 +229,8 @@ input:focus {
     margin: 5px;
 }
 #footer a{
-    font-weight: 700;
-    color: rgb(207, 204, 204);
+    /* color: rgb(207, 204, 204); */
+    color: #62b0fccc;
 }
 
 /* Animations */
@@ -235,6 +265,16 @@ input:focus {
     #logo {
         font-size: 1.5rem;
     }
+    #nav a {
+        margin: 0 5px;
+    }
+    #nav a span {
+        display: none;
+    }
+    #nav a i {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
     #body {
         flex-direction: column;
         padding: 10px;
@@ -247,6 +287,12 @@ input:focus {
     }
     #channels #title {
         font-size: 1rem;
+    }
+    #title #channels-search {
+        display: none;
+    }
+    #title i {
+        display: none;
     }
     #footer {
         display: none;
