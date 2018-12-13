@@ -3,18 +3,33 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="./assets/logo.png">
+        <link rel="stylesheet" href="./css/all.css">
         <link href="./css/index.css" rel="stylesheet"/>
-        <script src="./js/index.js"></script>
+        <script type="text/javascript" src="./js/clappr.min.js"></script>
+        <script type="text/javascript" src="./js/clappr-responsive-container-plugin.js"></script>
+        <script type="text/javascript" src="./js/clappr-level-selector.min.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
         <title>HalaSat TV</title>
     </head>
     <body>
-        <!-- Header -->
-        <div id="header">
-            <a id="logo" href="/"></a>
-            <div id="nav">
-                <a href="#"></a>
-            </div>
+        <div id="wallpaper"></div>
+    <!-- Header -->
+    <div id="header">
+        <a id="logo" href="/"></a>
+        <!-- <div id="nav">
+                <a href="#" class="cinema"><span>Cinema</span><i class="fas fa-video"></i></a>
+                <a href="#" class="share"><span>Share</span><i class="fas fa-folder"></i></a>
+        </div> -->
         </div>
+<br><br><br>
+<!--        <div id="banner">
+            <h2>Watch tv channels online with HalaSat TV</h2>
+            <p>With our service you can watch your favourite TV channels 
+                directly form your computer where ever you are. 
+                The service includes Sports channels, entertainment, movies, etc.
+            </p>
+        </div> -->
         <!-- Content container -->
         <div id="body">
             <!-- Video player -->
@@ -23,7 +38,7 @@
             </div>
             <!-- List of channels -->
             <div id="channels">
-                <h3 id="title">Channels</h3>
+                <h3 id="title">Channels</h3> <!-- <input id="channels-search" type="text" name="search" placeholder="Search"><i class="fas fa-search"></i> -->
                 <div id="channels-list-container">
                     <div id="channels-list"></div>
                 </div>
@@ -32,7 +47,7 @@
         <!-- Footer containing copyright info and social media links -->
         <div id="footer">
             <p>Copyright © 2018. All rights reserved.</p>
-            <span><a href="http://halasat.net">HalaSat</a><span>
+            <span><a href="http://halasat.net">HalaSat Co., Ltd.</a><span>
         </div>
     </body>
 </html>
